@@ -7,10 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+<script>
+  $(document).ready(function(){
+    $("input").change(function() {
+      $("#alert").show();
+    });
+  });
+</script>
+
 <style>
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
+    margin-bottom: 10px;
     width: 100%;
 }
 
@@ -20,49 +30,60 @@ td, th {
     padding: 8px;
 }
 
-tr:nth-child(even) {
-    background-color: LightSteelBlue;
+#alert {
+	display: none;
+}
+
+#save-btn {
+	float: right;
+	width: 30%;
 }
 </style>
 </head>
 <body>
+  <div class="container">
+    <h2>Dynamic App Intent Intake</h2>
+      <table id="table">
+        <tr>
+          <th>Intent</th>
+          <th>POC</th>
+          <th>UM</th>
+          <th>MS</th>
+          <th>SB</th>
+          <th>Design</th>
+        </tr>
+        <tr>
+          <td>Intent 1</td>
+          <td>April</td>
+          <td><input id="checkBox-um-1" name="um1" type="checkbox"></td>
+          <td><input id="checkBox-ms-1" type="checkbox"></td>
+          <td><input id="checkBox-sb-1" type="checkbox"></td>
+          <td><input id="checkBox-design-1" type="checkbox"></td>
+        </tr>
+        <tr>
+          <td>Intent 2</td>
+          <td>Bill</td>
+          <td><input id="checkBox-um-2" type="checkbox"></td>
+          <td><input id="checkBox-ms-2" type="checkbox"></td>
+          <td><input id="checkBox-sb-2" type="checkbox"></td>
+          <td><input id="checkBox-design-2" type="checkbox"></td>
+        </tr>
+         <tr>
+          <td>Intent 3</td>
+          <td>Charlie</td>
+          <td><input id="checkBox-um-3" type="checkbox"></td>
+          <td><input id="checkBox-ms-3" type="checkbox"></td>
+          <td><input id="checkBox-sb-3" type="checkbox"></td>
+          <td><input id="checkBox-design-3" type="checkbox"></td>
+        </tr>
+      </table>
 
-<h2>Dynamic App Intent Intake</h2>
-
-<table>
-  <tr>
-    <th>Intent</th>
-    <th>POC</th>
-    <th>UM</th>
-    <th>MS</th>
-    <th>SB</th>
-    <th>Design</th>
-  </tr>
-  <tr>
-    <td>Intent 1</td>
-    <td>April</td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-  </tr>
-  <tr>
-    <td>Intent 2</td>
-    <td>Bill</td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-  </tr>
-   <tr>
-    <td>Intent 3</td>
-    <td>Charlie</td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-    <td><input id="checkBox" type="checkbox"></td>
-  </tr>
-</table>
-
+    <div class="container row">
+      <div id="alert" class="col-sm-8 alert alert-info">
+        <strong>You've made changes!</strong> If you would like to save the changes, click the SAVE button
+      </div>
+      <button id="save-btn" type="button" class="col-sm-4 btn btn-primary btn-lg">SAVE</button>
+    </div>
+  </div>
 </body>
 </html>
